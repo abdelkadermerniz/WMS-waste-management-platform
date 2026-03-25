@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+.env
+*.env.local
+coverage
+.turbo
+ia/waste_classifier/data
+ia/waste_classifier/best_model.pth
+ia/waste_classifier/src/best_model.pth
