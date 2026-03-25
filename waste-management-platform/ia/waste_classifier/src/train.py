@@ -2,8 +2,11 @@ import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch.utils.tensorboard import SummaryWriter
+import torch.profiler
 from dataset import get_dataloaders
 from model import get_model
+from utils import set_seed
 
 # Directories
 DATA_DIR = "data/TRAIN"
@@ -15,6 +18,9 @@ EPOCHS = 10
 LEARNING_RATE = 0.001
 
 def main():
+    # 0. Reproducibility
+    set_seed(42)
+
     # 1. Device Setup
     if torch.cuda.is_available():
         device = torch.device("cuda")
@@ -49,9 +55,14 @@ def main():
     # We only train the newly created fully connected layer because the rest is frozen
     optimizer = optim.Adam(model.fc.parameters(), lr=LEARNING_RATE)
 
-    # 5. Training Loop
+    # 5. Training Loop & Tracking
+    writer = SummaryWriter('runs/waste_classifier_exp')
     print(f"Starting Training for {EPOCHS} epochs...")
     best_val_acc = 0.0
+
+    # Early stopping parameters
+    patience = 3
+    epochs_no_improve = 0
 
     for epoch in range(EPOCHS):
         # --- Training Phase ---
@@ -96,16 +107,28 @@ def main():
         epoch_val_loss = val_loss / len(val_loader.dataset)
         epoch_val_acc = val_corrects.float() / len(val_loader.dataset)
 
+        writer.add_scalar('Loss/train', epoch_train_loss, epoch)
+        writer.add_scalar('Accuracy/train', epoch_train_acc, epoch)
+        writer.add_scalar('Loss/validation', epoch_val_loss, epoch)
+        writer.add_scalar('Accuracy/validation', epoch_val_acc, epoch)
+
         print(f"Epoch {epoch+1}/{EPOCHS}")
         print(f"  Train Loss: {epoch_train_loss:.4f} Acc: {epoch_train_acc:.4f}")
         print(f"  Val Loss:   {epoch_val_loss:.4f} Acc: {epoch_val_acc:.4f}")
 
-        # Save check-points
+        # Save check-points and early stopping
         if epoch_val_acc > best_val_acc:
             print(f"  ⭐ Saving new best model with {epoch_val_acc*100:.2f}% accuracy!")
             best_val_acc = epoch_val_acc
             torch.save(model.state_dict(), MODEL_SAVE_PATH)
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+            if epochs_no_improve >= patience:
+                print(f"🛑 Early stopping triggered after {patience} epochs without improvement.")
+                break
 
+    writer.close()
     print("Training complete! Best validation accuracy: {:.2f}%".format(best_val_acc * 100))
 
 if __name__ == "__main__":
