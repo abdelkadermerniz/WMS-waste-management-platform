@@ -1,0 +1,43 @@
+{
+  "auth": {
+    "welcome": "مرحباً بعودتك",
+    "login_title": "سجل الدخول إلى حسابك",
+    "login_desc": "أدخل بريدك الإلكتروني وكلمة المرور للوصول إلى لوحة التحكم",
+    "email_label": "البريد الإلكتروني",
+    "email_placeholder": "admin@wm-platform.com",
+    "password_label": "كلمة المرور",
+    "password_placeholder": "••••••••",
+    "sign_in": "تسجيل الدخول",
+    "signing_in": "جاري تسجيل الدخول...",
+    "login_success": "تم تسجيل الدخول بنجاح",
+    "login_failed": "فشل تسجيل الدخول",
+    "invalid_credentials": "البريد الإلكتروني أو كلمة المرور غير صالحة. يرجى المحاولة مرة أخرى."
+  },
+  "nav": {
+    "dashboard": "لوحة القيادة",
+    "classifications": "التصنيفات",
+    "waste_items": "النفايات",
+    "collectors": "الجامعين",
+    "analytics": "التحليلات",
+    "settings": "الإعدادات",
+    "toggle_sidebar": "تبديل الشريط الجانبي",
+    "toggle_theme": "تبديل المظهر",
+    "notifications": "إشعارات",
+    "brand_name": "إيكولوجيك الذكاء الاصطناعي",
+    "copyright": "© 2026 أنظمة إيكولوجيك",
+    "version": "v1.4.2"
+  },
+  "identity": {
+    "title": "إدارة الهوية",
+    "profile_title": "ملف المستخدم",
+    "profile_desc": "معلومات حسابك الشخصية",
+    "loading": "جاري تحميل الملف الشخصي...",
+    "enterprise_id": "معرف المؤسسة:",
+    "sign_out": "تسجيل الخروج"
+  },
+  "roles": {
+    "SUPER_ADMIN": "المشرف العام",
+    "ENTERPRISE_MANAGER": "مدير المؤسسة",
+    "CHAUFFEUR": "سائق"
+  }
+}

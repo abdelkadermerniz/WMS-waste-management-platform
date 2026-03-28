@@ -1,0 +1,43 @@
+{
+  "auth": {
+    "welcome": "Content de vous revoir",
+    "login_title": "Connectez-vous à votre compte",
+    "login_desc": "Entrez votre email et mot de passe pour accéder au backoffice",
+    "email_label": "Email",
+    "email_placeholder": "admin@wm-platform.com",
+    "password_label": "Mot de passe",
+    "password_placeholder": "••••••••",
+    "sign_in": "Se connecter",
+    "signing_in": "Connexion en cours...",
+    "login_success": "Connexion réussie",
+    "login_failed": "Échec de la connexion",
+    "invalid_credentials": "Email ou mot de passe invalide. Veuillez réessayer."
+  },
+  "nav": {
+    "dashboard": "Tableau de Bord",
+    "classifications": "Classifications",
+    "waste_items": "Articles de Déchets",
+    "collectors": "Collecteurs",
+    "analytics": "Analytiques",
+    "settings": "Paramètres",
+    "toggle_sidebar": "Basculer la barre latérale",
+    "toggle_theme": "Basculer le thème",
+    "notifications": "Notifications",
+    "brand_name": "EcoLogic AI",
+    "copyright": "© 2026 EcoLogic Systems",
+    "version": "v1.4.2"
+  },
+  "identity": {
+    "title": "Gestion des Identités",
+    "profile_title": "Profil Utilisateur",
+    "profile_desc": "Vos informations de compte personnelles",
+    "loading": "Chargement du profil...",
+    "enterprise_id": "ID d'Entreprise :",
+    "sign_out": "Se déconnecter"
+  },
+  "roles": {
+    "SUPER_ADMIN": "SUPER ADMIN",
+    "ENTERPRISE_MANAGER": "GESTIONNAIRE D'ENTREPRISE",
+    "CHAUFFEUR": "CHAUFFEUR"
+  }
+}

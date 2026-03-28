@@ -1,0 +1,56 @@
+﻿src/app.ts(33,76): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type 'import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/node_modules/@types/express/index").RequestHandler<import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/node_modules/@types/express-serve-static-core/index").ParamsDictionary, any, any, qs.ParsedQs, Record<...>>' is not assignable to type 'import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/apps/express-api/node_modules/@types/express-serve-static-core/index").RequestHandler<import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/node_modules/@types/express-serve-static-core/index").ParamsDictionary, any, any, qs....'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Property 'param' is missing in type 'import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/apps/express-api/node_modules/@types/express-serve-static-core/index").Request<import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/node_modules/@types/express-serve-static-core/index").ParamsDictionary, any, any, qs.ParsedQ...' but required in type 'import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/node_modules/@types/express-serve-static-core/index").Request<import("C:/Users/hmerniz/Documents/sideproject/waste-management-platform/node_modules/@types/express-serve-static-core/index").ParamsDictionary, any, any, qs.ParsedQs, Record<...>>'.
+src/application/use-cases/auth/AuthService.ts(3,43): error TS2307: Cannot find module '../../domain/entities/User' or its corresponding type declarations.
+src/application/use-cases/auth/AuthService.ts(4,33): error TS2307: Cannot find module '../../domain/repositories/IUserRepository' or its corresponding type declarations.
+src/application/use-cases/auth/AuthService.ts(5,26): error TS2307: Cannot find module '../../domain/value-objects/enums' or its corresponding type declarations.
+src/application/use-cases/auth/AuthService.ts(93,30): error TS2769: No overload matches this call.
+  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'null'.
+  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, options?: SignOptions | undefined): string', gave the following error.
+    Type 'string' is not assignable to type 'number | StringValue | undefined'.
+  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, callback: SignCallback): void', gave the following error.
+    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.
+src/application/use-cases/auth/AuthService.ts(104,16): error TS2769: No overload matches this call.
+  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'null'.
+  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, options?: SignOptions | undefined): string', gave the following error.
+    Type 'string' is not assignable to type 'number | StringValue | undefined'.
+  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, callback: SignCallback): void', gave the following error.
+    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.
+src/infrastructure/repositories/SequelizeChauffeurRepository.ts(23,16): error TS2339: Property 'createdAt' does not exist on type 'ChauffeurModel'.
+src/infrastructure/repositories/SequelizeChauffeurRepository.ts(24,16): error TS2551: Property 'updatedAt' does not exist on type 'ChauffeurModel'. Did you mean 'update'?
+src/infrastructure/repositories/SequelizeChauffeurRepository.ts(34,16): error TS2339: Property 'createdAt' does not exist on type 'VehicleModel'.
+src/infrastructure/repositories/SequelizeChauffeurRepository.ts(35,16): error TS2551: Property 'updatedAt' does not exist on type 'VehicleModel'. Did you mean 'update'?
+src/infrastructure/repositories/SequelizeUserRepository.ts(63,9): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(this: ModelStatic<...>, values: { id?: string | Fn | Col | Literal | undefined; email?: string | Fn | Col | Literal | undefined; passwordHash?: string | Fn | Col | Literal | undefined; ... 7 more ...; updatedAt?: Date | ... 3 more ... | undefined; }, options: Omit<...> & { ...; }): Promise<...>', gave the following error.
+    Type 'string | null' is not assignable to type 'string | Fn | Col | Literal | undefined'.
+      Type 'null' is not assignable to type 'string | Fn | Col | Literal | undefined'.
+  Overload 2 of 2, '(this: ModelStatic<...>, values: { id?: string | Fn | Col | Literal | undefined; email?: string | Fn | Col | Literal | undefined; passwordHash?: string | Fn | Col | Literal | undefined; ... 7 more ...; updatedAt?: Date | ... 3 more ... | undefined; }, options: UpdateOptions<...>): Promise<...>', gave the following error.
+    Type 'string | null' is not assignable to type 'string | Fn | Col | Literal | undefined'.
+      Type 'null' is not assignable to type 'string | Fn | Col | Literal | undefined'.
+src/infrastructure/repositories/SequelizeWasteCollectionRepository.ts(26,16): error TS2339: Property 'createdAt' does not exist on type 'WasteCollectionModel'.
+src/infrastructure/repositories/SequelizeWasteCollectionRepository.ts(27,16): error TS2551: Property 'updatedAt' does not exist on type 'WasteCollectionModel'. Did you mean 'update'?
+src/interfaces/controllers/ChauffeurController.ts(65,50): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/ChauffeurController.ts(94,38): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/ChauffeurController.ts(117,36): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/EnterpriseController.ts(67,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/EnterpriseController.ts(127,46): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/EnterpriseController.ts(155,30): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/WasteCollectionController.ts(82,45): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/WasteCollectionController.ts(135,9): error TS2322: Type 'string | string[]' is not assignable to type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/WasteCollectionController.ts(163,9): error TS2322: Type 'string | string[]' is not assignable to type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/interfaces/controllers/WasteCollectionController.ts(190,9): error TS2322: Type 'string | string[]' is not assignable to type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
